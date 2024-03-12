@@ -1,0 +1,109 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<!-- salt:2d323f85-f057-4710-8e73-25957b7fdb5e -->
+<metadata name="Contacts" path="/shared/examples/PgAdmin/public/Contacts" type="TABLE" subtype="DATABASE_TABLE" changeToken="0" tableType="TABLE">
+  <columns>
+    <column name="ID" nullable="false">
+      <datatype name="int4" extendedName="int4" subType="DATASOURCE_TYPE" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <attribute name="mandatory" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="telephone" nullable="true">
+      <datatype name="varchar" extendedName="varchar(2147483647)" subType="DATASOURCE_TYPE" type="STRING" maxLength="2147483647"/>
+      <attribute name="mandatory" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="email" nullable="true">
+      <datatype name="varchar" extendedName="varchar(2147483647)" subType="DATASOURCE_TYPE" type="STRING" maxLength="2147483647"/>
+      <attribute name="mandatory" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="type" nullable="true">
+      <datatype name="varchar" extendedName="varchar(2147483647)" subType="DATASOURCE_TYPE" type="STRING" maxLength="2147483647"/>
+      <attribute name="mandatory" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="EID" nullable="true">
+      <datatype name="int4" extendedName="int4" subType="DATASOURCE_TYPE" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <attribute name="mandatory" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes>
+    <index name="Contacts_pkey" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="ID" sortOrder="ASCENDING"/>
+      <attribute name="indexSchema" type="STRING">public</attribute>
+    </index>
+    <index name="fki_eii" type="OTHER" unique="false">
+      <indexColumn name="EID" sortOrder="ASCENDING"/>
+      <attribute name="indexSchema" type="STRING">public</attribute>
+    </index>
+  </indexes>
+  <foreignKeys>
+    <foreignKey name="eii" primaryKeyName="employee_pkey" primaryKeyTableName="/shared/examples/PgAdmin/public/employee">
+      <foreignKeyColumn primaryColumnName="id" foreignColumnName="EID"/>
+    </foreignKey>
+  </foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/shared/examples/PgAdmin/public/employee" type="TABLE">
+    <datatype type="TABLE" refId="256">
+      <element name="id" nullable="false">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="source">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="firstname">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="lastname">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="address">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="city">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="state">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="zipcode">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="SSN">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="dateOfBirth">
+        <datatype type="DATE"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="c:0:mandatory" type="BOOLEAN">false</attribute>
+  <attribute name="c:1:mandatory" type="BOOLEAN">false</attribute>
+  <attribute name="c:2:mandatory" type="BOOLEAN">false</attribute>
+  <attribute name="c:3:mandatory" type="BOOLEAN">false</attribute>
+  <attribute name="c:4:mandatory" type="BOOLEAN">false</attribute>
+  <attribute name="creationDate" type="LONG">1710229076526</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="i:0:indexSchema" type="STRING">public</attribute>
+  <attribute name="i:1:indexSchema" type="STRING">public</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1710229076526</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1710229076526</attribute>
+</metadata>

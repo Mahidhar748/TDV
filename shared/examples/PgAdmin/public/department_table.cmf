@@ -1,0 +1,69 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<!-- salt:2d323f85-f057-4710-8e73-25957b7fdb5e -->
+<metadata name="department" path="/shared/examples/PgAdmin/public/department" type="TABLE" subtype="DATABASE_TABLE" changeToken="0" tableType="TABLE">
+  <columns>
+    <column name="department_id" nullable="false">
+      <datatype name="int4" extendedName="int4" subType="DATASOURCE_TYPE" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <attribute name="mandatory" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="employee_id" nullable="true">
+      <datatype name="int4" extendedName="int4" subType="DATASOURCE_TYPE" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <attribute name="mandatory" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="department_name" nullable="false">
+      <datatype name="varchar" extendedName="varchar(200)" subType="DATASOURCE_TYPE" type="STRING" maxLength="200"/>
+      <attribute name="mandatory" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes>
+    <index name="department_pkey" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="department_id" sortOrder="ASCENDING"/>
+      <attribute name="indexSchema" type="STRING">public</attribute>
+    </index>
+    <index name="fki_SID" type="OTHER" unique="false">
+      <indexColumn name="employee_id" sortOrder="ASCENDING"/>
+      <attribute name="indexSchema" type="STRING">public</attribute>
+    </index>
+  </indexes>
+  <foreignKeys>
+    <foreignKey name="SID" primaryKeyName="student_pkey" primaryKeyTableName="/shared/examples/PgAdmin/public/student">
+      <foreignKeyColumn primaryColumnName="sid" foreignColumnName="employee_id"/>
+    </foreignKey>
+  </foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/shared/examples/PgAdmin/public/student" type="TABLE">
+    <datatype type="TABLE" refId="256">
+      <element name="sid" nullable="false">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="sname" nullable="false">
+        <datatype type="STRING" maxLength="200"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="c:0:mandatory" type="BOOLEAN">false</attribute>
+  <attribute name="c:1:mandatory" type="BOOLEAN">false</attribute>
+  <attribute name="c:2:mandatory" type="BOOLEAN">false</attribute>
+  <attribute name="creationDate" type="LONG">1710229076540</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="i:0:indexSchema" type="STRING">public</attribute>
+  <attribute name="i:1:indexSchema" type="STRING">public</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1710229076540</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1710229076540</attribute>
+</metadata>
